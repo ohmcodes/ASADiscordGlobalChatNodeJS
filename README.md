@@ -6,10 +6,11 @@ Ark Ascended In game Global chat relay to Discord channel back and fort made in 
 1. Download [Latest LTS](https://nodejs.org/dist/v20.9.0/node-v20.9.0-x64.msi)
 2. Install
 
-# Create .env file
-#### Env file is being ignored on repository for security purposes you have to make your own
-1. create a file name it .env
-2. change all the required field with your own credentials
+# Download and Setup the repo
+1. Extract zip file
+2. Go to directory
+3. create a file name it .env (Env file is being ignored on repository for security purposes you have to make your own)
+4. change all the required field with your own credentials
 ```
 CLIENT_ID=
 GUILD_ID=
@@ -18,8 +19,12 @@ TOKEN=
 HOST=
 PORT=
 RCONPWD=
+PREFIX=
+SUFFIX=
+FILTERS=AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor,RCON: Not connected
 ```
-3. Descriptions
+
+5. Descriptions
 ```
 CLIENT_ID Bot client id 
 GUILD_ID ----------------- Discord Server (Right click to your server and Copy Server ID) make sure developer mode is on
@@ -28,9 +33,12 @@ TOKEN -------------------- Token Bot (Visit and create bot on Discord developort
 HOST --------------------- IP or Host
 PORT --------------------- Server game RCON port
 RCONPWD ------------------ Server Admin/Cheat password
+PREFIX ------------------- Start of the message
+SUFFIX ------------------- End of the message
+FILTERS ------------------- All known text buffer that should be remove
 ```
-4. Discord [Dev link](https://discord.com/developers/docs/intro)
-5. Open Discord (Profile) Settings then go to Advanced Section Click or Turn on Developer Mode
+6. Discord [Dev link](https://discord.com/developers/docs/intro)
+7. Open Discord (Profile) Settings then go to Advanced Section Click or Turn on Developer Mode
 
 # Deploy
 - Ubuntu/Linux
@@ -48,6 +56,11 @@ npm i
 3. start the app
 ```
 npm start
+```
+
+# Redeploy command on Docker
+```
+sudo docker-compose down && git pull && sudo docker image rm arksa_global_chat_app && sudo docker-compose up -d --build
 ```
 
 # NOTES

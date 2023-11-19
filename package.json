@@ -1,0 +1,25 @@
+{
+  "name": "asadiscordglobalchatnodejs",
+  "version": "1.0.0",
+  "description": "Global Chat for Ark SA using nodejs and rcon_lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmcodes/ASADiscordGlobalChatNodeJS.git"
+  },
+  "author": "ohmcodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ohmcodes/ASADiscordGlobalChatNodeJS/issues"
+  },
+  "homepage": "https://github.com/ohmcodes/ASADiscordGlobalChatNodeJS#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.3.1",
+    "rcon-client": "github:ohmcodes/rcon_client_lib"
+  }
+}
