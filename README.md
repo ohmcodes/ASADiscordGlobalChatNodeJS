@@ -60,7 +60,7 @@ npm start
 
 # Redeploy command on Docker
 ```
-sudo docker-compose down && git pull && sudo docker image rm arksa_global_chat_app && sudo docker-compose up -d --build
+sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalchatnodejs_app && sudo docker-compose up -d --build
 ```
 
 # NOTES
