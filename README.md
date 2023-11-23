@@ -21,7 +21,7 @@ PORT=
 RCONPWD=
 PREFIX=
 SUFFIX=
-FILTERS=AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor,RCON: Not connected
+FILTERS=AdminCmd,Tribe Tamed a,Tamed a,was killed\!,added to the Tribe,RichColor,RCON: Not connected
 ```
 
 5. Descriptions
@@ -58,6 +58,19 @@ npm i
 npm start
 ```
 
+# Deploy without cache
+```
+sudo docker-compose build --no-cache
+sudo docker-compose up -d
+```
+
+# Changing config .env
+```
+sudo docker-compose down
+change .env
+sudo docker-compose up -d
+```
+
 # Redeploy command on Docker
 ```
 sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalchatnodejs_app && sudo docker-compose up -d --build
@@ -66,5 +79,6 @@ sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalcha
 # NOTES
 1. npm start (if the app throws an error you need to restart the app manually so it is recommended to deploy it on docker for automation)
 2. This app is only support 1 server/map and it will be updated as soon as ASA released more maps
+3. Notice the changes on Filter add backslash to escape the exclamation point ```\!``` also adding double quotes will prevent any errors when deploying
 
 
