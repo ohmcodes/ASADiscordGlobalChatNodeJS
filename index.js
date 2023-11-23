@@ -40,7 +40,8 @@ async function parseMessage(res){
     const channel = client.channels.cache.find(channel => channel.id === process.env.CHANNEL_ID)
     
     if (!msgFilter.some(v => res.includes(v))) {
-        channel.send(res);
+        // removed double names eg: name (name): <msg>
+        channel.send(`${process.env.MAP}${res.replace(/ *\([^)]*\) */g, "")}`);
     }
   }
 }
