@@ -1,13 +1,17 @@
 require('dotenv').config()
 const { Rcon } = require('rcon-client');
-const { Client, GatewayIntentBits} = require('discord.js');
+const { Client, Events, GatewayIntentBits} = require('discord.js');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, 'GuildVoiceStates'] });
+const client = new Client({ intents: [
+  GatewayIntentBits.Guilds, 
+  GatewayIntentBits.GuildMessages, 
+  GatewayIntentBits.MessageContent
+]});
 
-client.on("ready", () => {
-    console.log("Bot is online!");
-})
+client.once(Events.ClientReady, c => {
+	console.log(`Ready! Logged in as ${c.user.tag}`);
+});
 
 // RCON configuration
 const rconConfig = {
@@ -38,7 +42,6 @@ async function sendRconCommand(command) {
 
 async function parseMessage(res){
   var msgFilter = `${process.env.FILTERS}`.split(',');
-  console.log(msgFilter);
   if(!res.includes("Server received, But no response!!")){
     const channel = client.channels.cache.find(channel => channel.id === process.env.CHANNEL_ID)
     
@@ -49,11 +52,25 @@ async function parseMessage(res){
   }
 }
 
+
 client.on("messageCreate", (message) => {
     if(message.author.bot) return;
     if(message.channel.id != process.env.CHANNEL_ID) return;
 
-    sendRconCommand(`ChatLogAppend ${(process.env.PREFIX !="")? `${process.env.PREFIX}`: ""}${message.member.displayName}: ${message.content}${(process.env.SUFFIX !="")? `${process.env.SUFFIX}`: ""}`);
+    var msg = ""
+    var vip = `${process.env.VIP}`.split(',')
+    var vipBool = vip.includes(message.member.displayName)
+
+    msg += `ChatLogAppend `
+    msg += `${(process.env.PREFIX !="")? `${process.env.PREFIX}`: ""}`
+    msg += `${(vipBool)? process.env.VIPCOLORPRE:""}`
+    msg += `${message.member.displayName}`
+    msg += `${(vipBool)? process.env.VIPCOLORSUF:""}`
+    msg += ": "
+    msg += `${message.content}`
+    msg += `${(process.env.SUFFIX !="")? `${process.env.SUFFIX}`: ""}`
+
+    sendRconCommand(msg);
 })
 
 setInterval(function() {

@@ -19,11 +19,14 @@ TOKEN="your_bot_token"
 HOST="your_ark_host_or_ip_address"
 PORT="your_ark_rcon_port"
 RCONPWD="your_ark_rconpassword"
-PREFIX="[Discord] <RichColor Color=\"1,0,1,0\">VIP</RichColor> "
+VIP="name1,name2,name3"
+VIPCOLORPRE="<RichColor Color="1,0,1,1">"
+VIPCOLORSUF="</> "
+PREFIX="[Discord] "
 SUFFIX=""
 MAP="[TheIsland] "
 CLUSTER="Vanilla"
-FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed\!,added to the Tribe,RichColor,RCON: Not connected"
+FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor,RCON: Not connected,SERVER:,Tribe,Day"
 ```
 
 5. Descriptions
@@ -35,6 +38,9 @@ TOKEN -------------------- Token Bot (Visit and create bot on Discord developort
 HOST --------------------- IP or Host
 PORT --------------------- Server game RCON port
 RCONPWD ------------------ Server Admin/Cheat password
+VIP ---------------------- Each name should separate by quoma (,) Node: exact name on discord
+VIPCOLORPRE -------------- Color <RichColor Color=\"1,0,1,0\">
+VIPCOLORSUF -------------- Closing </> 
 PREFIX ------------------- Start of the message
 SUFFIX ------------------- End of the message
 MAP ---------------------- Current MAP
@@ -83,7 +89,7 @@ sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalcha
 # NOTES
 1. npm start (if the app throws an error you need to restart the app manually so it is recommended to deploy it on docker for automation)
 2. This app is only support 1 server/map and it will be updated as soon as ASA released more maps
-3. Notice the changes on Filter add backslash to escape the exclamation point ```\!``` also adding double quotes will prevent any errors when deploying
-4. env MAP should add space at the end eg: MAP="TheIsland " also same as PREFIX and SUFFIX
+3. Adding double quotes will prevent any errors when deploying
+4. env MAP should add space at the end eg: MAP="[TheIsland] " also same as PREFIX and SUFFIX
 
 
