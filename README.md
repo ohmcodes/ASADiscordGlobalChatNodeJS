@@ -12,16 +12,18 @@ Ark Ascended In game Global chat relay to Discord channel back and fort made in 
 3. create a file name it .env (Env file is being ignored on repository for security purposes you have to make your own)
 4. change all the required field with your own credentials
 ```
-CLIENT_ID=
-GUILD_ID=
-CHANNEL_ID=
-TOKEN=
-HOST=
-PORT=
-RCONPWD=
-PREFIX=
-SUFFIX=
-FILTERS=AdminCmd,Tribe Tamed a,Tamed a,was killed\!,added to the Tribe,RichColor,RCON: Not connected
+CLIENT_ID="your_bot_clientid"
+GUILD_ID="your_discord_server_id"
+CHANNEL_ID="your_bot_channelid"
+TOKEN="your_bot_token"
+HOST="your_ark_host_or_ip_address"
+PORT="your_ark_rcon_port"
+RCONPWD="your_ark_rconpassword"
+PREFIX="[Discord] <RichColor Color=\"1,0,1,0\">VIP</RichColor> "
+SUFFIX=""
+MAP="[TheIsland] "
+CLUSTER="Vanilla"
+FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed\!,added to the Tribe,RichColor,RCON: Not connected"
 ```
 
 5. Descriptions
@@ -35,7 +37,9 @@ PORT --------------------- Server game RCON port
 RCONPWD ------------------ Server Admin/Cheat password
 PREFIX ------------------- Start of the message
 SUFFIX ------------------- End of the message
-FILTERS ------------------- All known text buffer that should be remove
+MAP ---------------------- Current MAP
+CLUSTER ------------------ To know where cluster to save if running multiple cluster
+FILTERS ------------------ All known text buffer that should be remove
 ```
 6. Discord [Dev link](https://discord.com/developers/docs/intro)
 7. Open Discord (Profile) Settings then go to Advanced Section Click or Turn on Developer Mode
@@ -80,6 +84,6 @@ sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalcha
 1. npm start (if the app throws an error you need to restart the app manually so it is recommended to deploy it on docker for automation)
 2. This app is only support 1 server/map and it will be updated as soon as ASA released more maps
 3. Notice the changes on Filter add backslash to escape the exclamation point ```\!``` also adding double quotes will prevent any errors when deploying
-4. env MAP should add space at the end eg: MAP="TheIsland "
+4. env MAP should add space at the end eg: MAP="TheIsland " also same as PREFIX and SUFFIX
 
 
