@@ -52,7 +52,6 @@ async function parseMessage(res){
   }
 }
 
-
 client.on("messageCreate", (message) => {
     if(message.author.bot) return;
     if(message.channel.id != process.env.CHANNEL_ID) return;
@@ -63,9 +62,9 @@ client.on("messageCreate", (message) => {
 
     msg += `ChatLogAppend `
     msg += `${(process.env.PREFIX !="")? `${process.env.PREFIX}`: ""}`
-    msg += `${(vipBool)? process.env.VIPCOLORPRE:""}`
+    msg += `${(vipBool)? `<RichColor Color=\"${process.env.VIPCOLOR}">`:""}`
     msg += `${message.member.displayName}`
-    msg += `${(vipBool)? process.env.VIPCOLORSUF:""}`
+    msg += `${(vipBool)? "</> ":""}`
     msg += ": "
     msg += `${message.content}`
     msg += `${(process.env.SUFFIX !="")? `${process.env.SUFFIX}`: ""}`
