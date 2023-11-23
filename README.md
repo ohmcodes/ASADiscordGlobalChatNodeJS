@@ -31,7 +31,7 @@ FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor
 
 5. Descriptions
 ```
-CLIENT_ID Bot client id 
+CLIENT_ID ---------------- Bot client id 
 GUILD_ID ----------------- Discord Server (Right click to your server and Copy Server ID) make sure developer mode is on
 CHANNEL_ID --------------- Channel to send and receive global chats (Right click to your channel and Copy Channel ID) make sure developer mode is on
 TOKEN -------------------- Token Bot (Visit and create bot on Discord develoports link below)
