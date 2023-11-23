@@ -80,5 +80,6 @@ sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalcha
 1. npm start (if the app throws an error you need to restart the app manually so it is recommended to deploy it on docker for automation)
 2. This app is only support 1 server/map and it will be updated as soon as ASA released more maps
 3. Notice the changes on Filter add backslash to escape the exclamation point ```\!``` also adding double quotes will prevent any errors when deploying
+4. env MAP should add space at the end eg: MAP="TheIsland "
 
 
