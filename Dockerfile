@@ -12,8 +12,6 @@ ENV NODE_ENV=${NODE_ENV}
 
 RUN git clone $REPO_URL .
 
-COPY .env .env
-
 RUN npm install 
 
 CMD ["npm", "start"]
