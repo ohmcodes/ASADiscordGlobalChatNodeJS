@@ -29,7 +29,10 @@ async function sendRconCommand(command) {
     // Disconnect from the server
     await rcon.end();
   } catch (error) {
-    console.error('Error:', error);
+    //console.error('Error:', error);
+    setTimeout(async ()=> {
+      await sendRconCommand(command);
+    }, 5000)
   }
 }
 
@@ -50,7 +53,7 @@ client.on("messageCreate", (message) => {
     if(message.author.bot) return;
     if(message.channel.id != process.env.CHANNEL_ID) return;
 
-    sendRconCommand(`ChatLogAppend ${(process.env.PREFIX !="")? `${process.env.PREFIX}: `: ""}${message.member.displayName}: ${message.content} ${(process.env.SUFFIX !="")? `${process.env.SUFFIX}`: ""}`);
+    sendRconCommand(`ChatLogAppend ${(process.env.PREFIX !="")? `${process.env.PREFIX}`: ""}${message.member.displayName}: ${message.content}${(process.env.SUFFIX !="")? `${process.env.SUFFIX}`: ""}`);
 })
 
 setInterval(function() {
