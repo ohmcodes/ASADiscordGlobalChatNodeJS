@@ -111,4 +111,5 @@ forever stop <PID>
 3. Adding double quotes will prevent any errors when deploying
 4. env MAP should add space at the end eg: MAP="[TheIsland] " also same as PREFIX and SUFFIX
 
-
+# Discord Support
+https://discord.gg/q8rPGprjEJ
