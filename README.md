@@ -12,6 +12,7 @@ Ark Ascended In game Global chat relay to Discord channel back and fort made in 
 3. create a file name it .env (Env file is being ignored on repository for security purposes you have to make your own)
 4. change all the required field with your own credentials
 ```
+COMMAND="ChatLogAppend"
 CLIENT_ID="your_bot_clientid"
 GUILD_ID="your_discord_server_id"
 CHANNEL_ID="your_bot_channelid"
@@ -30,6 +31,7 @@ FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor
 
 5. Descriptions
 ```
+COMMAND ------------------ Other Chat command ServerChat (ServerChat command will not crash xbox players)
 CLIENT_ID ---------------- Bot client id 
 GUILD_ID ----------------- Discord Server (Right click to your server and Copy Server ID) make sure developer mode is on
 CHANNEL_ID --------------- Channel to send and receive global chats (Right click to your channel and Copy Channel ID) make sure developer mode is on
