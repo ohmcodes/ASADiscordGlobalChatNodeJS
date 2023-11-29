@@ -60,7 +60,7 @@ client.on("messageCreate", (message) => {
     var vip = `${process.env.VIP}`.split(',')
     var vipBool = vip.includes(message.member.displayName)
 
-    msg += `ChatLogAppend `
+    msg += `${process.env.COMMAND} `
     msg += `${(process.env.PREFIX !="")? `${process.env.PREFIX}`: ""}`
     msg += `${(vipBool)? `<RichColor Color=\"${process.env.VIPCOLOR}">`:""}`
     msg += `${message.member.displayName}`
