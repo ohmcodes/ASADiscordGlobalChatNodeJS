@@ -85,6 +85,24 @@ sudo docker-compose up -d
 sudo docker-compose down && git pull && sudo docker image rm asadiscordglobalchatnodejs_app && sudo docker-compose up -d --build
 ```
 
+# Running Forever and Nodemon for crashed
+Work around on failovers
+If the app receive timeout from the server it will exit and you have to type npm run again
+you can use forever or nodemon to install this
+```
+npm i forever --global
+npm i nodemon --global
+
+then
+
+forever start -c "nodemon --harmony" index.js --exitcrash
+or
+forever start -c "nodemon" index.js
+
+forever list
+forever stop <PID>
+```
+
 # NOTES
 1. npm start (if the app throws an error you need to restart the app manually so it is recommended to deploy it on docker for automation)
 2. This app is only support 1 server/map and it will be updated as soon as ASA released more maps
