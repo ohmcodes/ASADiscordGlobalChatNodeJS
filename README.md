@@ -26,6 +26,8 @@ PREFIX="[Discord] "
 SUFFIX=""
 MAP="[TheIsland] "
 CLUSTER="Vanilla"
+INTERVAL=1000
+DEBUG=true
 FILTERS="AdminCmd,Tribe Tamed a,Tamed a,was killed!,added to the Tribe,RichColor,RCON: Not connected,SERVER:,Tribe,Day"
 ```
 
@@ -46,6 +48,8 @@ PREFIX ------------------- Start of the message
 SUFFIX ------------------- End of the message
 MAP ---------------------- Current MAP
 CLUSTER ------------------ To know where cluster to save if running multiple cluster
+INTERVAL=1000 ------------ How often get the ChatLogs
+DEBUG=true --------------- Enable logs
 FILTERS ------------------ All known text buffer that should be remove
 ```
 6. Discord [Dev link](https://discord.com/developers/docs/intro)
