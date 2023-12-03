@@ -1,6 +1,6 @@
 {
   "name": "asadiscordglobalchatnodejs",
-  "version": "1.0.0",
+  "version": "1.5.5",
   "description": "Global Chat for Ark SA using nodejs and rcon_lib",
   "main": "index.js",
   "scripts": {
